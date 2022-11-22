@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(detector)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++14)
+add_compile_options(-std=c++17)
 set(CMAKE_BUILD_TYPE "RelWithDebInfo")
 
 ## Find catkin macros and libraries
@@ -21,7 +21,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 ## System dependencies are found with CMake's conventions
-find_package(OpenCV REQUIRED COMPONENTS)
+find_package(OpenCV 4.4 REQUIRED COMPONENTS)
 
 add_definitions(${EIGEN3_DEFINITIONS})
 
@@ -175,6 +175,7 @@ target_link_libraries(${PROJECT_NAME}_node
     ${catkin_INCLUDE_DIRS}
     ${catkin_LIBRARIES}
     ${OpenCV_LIBRARIES}
+    /home/zh/code/3rdPartyLibrary/opencv-4.4.0/build/modules/rgbd/CMakeFiles/opencv_rgbd.dir/src/depth_registration.cpp.o
 )
 # message("catkin_LIBRARIES = ${catkin_LIBRARIES}")
 
